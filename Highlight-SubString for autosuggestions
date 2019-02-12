@@ -1,0 +1,9 @@
+   this.markedSuggestions = autoSugestionsArray.map(suggestion => {
+                let transformed = '';
+                const index = (suggestion.toLowerCase()).indexOf(value.toLowerCase());
+
+                transformed = transformed.concat(suggestion.slice(0, index));
+                transformed = transformed.concat(`<strong>${suggestion.slice(index, index + value.length)}</strong>`);
+                transformed = transformed.concat(suggestion.slice(index + value.length, suggestion.length));
+                return transformed;
+              });
